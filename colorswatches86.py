@@ -16,6 +16,8 @@
 
 """
 Based on http://www.tcl.tk/man/tcl8.6/TkCmd/colors.htm
+As corrected by http://www.tcl.tk/cgi-bin/tct/tip/403.html
+RGB values from http://www.w3.org/TR/css3-color/#svg-color
 
 """
 
@@ -24,7 +26,7 @@ from __future__ import print_function
 from collections import OrderedDict
 
 
-COLORS_ODICT_TK85_ORIG = OrderedDict([
+COLORS_ODICT = OrderedDict([
     ('000000', ['black',   'gray0', 'grey0']),
     ('030303', ['gray1',   'grey1']),
     ('050505', ['gray2',   'grey2']),
@@ -101,8 +103,9 @@ COLORS_ODICT_TK85_ORIG = OrderedDict([
     ('B8B8B8', ['gray72',  'grey72']),
     ('BABABA', ['gray73',  'grey73']),
     ('BDBDBD', ['gray74',  'grey74']),
-    ('BEBEBE', ['gray',    'grey']),
+    ('808080', ['gray',    'grey']),
     ('BFBFBF', ['gray75',  'grey75']),
+    ('C0C0C0', ['silver']),
     ('C2C2C2', ['gray76',  'grey76']),
     ('C4C4C4', ['gray77',  'grey77']),
     ('C7C7C7', ['gray78',  'grey78']),
@@ -233,10 +236,12 @@ COLORS_ODICT_TK85_ORIG = OrderedDict([
     ('00C5CD', ['turquoise3']),
     ('00868B', ['turquoise4']),
 
-    ('00FFFF', ['cyan', 'cyan1']),
+    ('00FFFF', ['cyan', 'cyan1', 'aqua']),
     ('00EEEE', ['cyan2']),
     ('00CDCD', ['cyan3']),
     ('008B8B', ['cyan4', 'dark cyan', 'DarkCyan']),
+
+    ('008080', ['teal']),
 
     ('E0FFFF', ['light cyan', 'LightCyan', 'LightCyan1']),
     ('D1EEEE', ['LightCyan2']),
@@ -367,6 +372,8 @@ COLORS_ODICT_TK85_ORIG = OrderedDict([
     ('8FBC8F', ['dark sea green', 'DarkSeaGreen']),
     ('698B69', ['DarkSeaGreen4']),
 
+    ('808000', ['olive']),
+
     ('C0FF3E', ['OliveDrab1']),
     ('B3EE3A', ['OliveDrab2']),
     ('9ACD32', ['OliveDrab3', 'yellow green', 'YellowGreen']),
@@ -388,7 +395,8 @@ COLORS_ODICT_TK85_ORIG = OrderedDict([
     ('66CD00', ['chartreuse3']),
     ('458B00', ['chartreuse4']),
 
-    ('00FF00', ['green', 'green1']),
+    ('008000', ['green']),
+    ('00FF00', ['green1', 'lime']),
     ('00EE00', ['green2']),
     ('00CD00', ['green3']),
     ('008B00', ['green4']),
@@ -433,11 +441,12 @@ COLORS_ODICT_TK85_ORIG = OrderedDict([
     ('9A32CD', ['DarkOrchid3']),
     ('68228B', ['DarkOrchid4']),
 
-    ('A020F0', ['purple']),
+    ('800080', ['purple']),
     ('9B30FF', ['purple1']),
     ('912CEE', ['purple2']),
     ('7D26CD', ['purple3']),
     ('551A8B', ['purple4']),
+    ('4B0082', ['indigo']),
 
     ('AB82FF', ['MediumPurple1']),
     ('9F79EE', ['MediumPurple2']),
@@ -486,7 +495,7 @@ COLORS_ODICT_TK85_ORIG = OrderedDict([
 
     ('C71585', ['medium violet red', 'MediumVioletRed']),
 
-    ('FF00FF', ['magenta', 'magenta1']),
+    ('FF00FF', ['magenta', 'magenta1', 'fuchsia']),
     ('EE00EE', ['magenta2']),
     ('CD00CD', ['magenta3']),
     ('8B008B', ['dark magenta', 'DarkMagenta', 'magenta4']),
@@ -499,8 +508,9 @@ COLORS_ODICT_TK85_ORIG = OrderedDict([
     ('FF34B3', ['maroon1']),
     ('EE30A7', ['maroon2']),
     ('CD2990', ['maroon3']),
-    ('B03060', ['maroon']),
     ('8B1C62', ['maroon4']),
+    ('800000', ['maroon']),
+    ('DC143C', ['crimson']),
 
     ('FF6EB4', ['HotPink1']),
     ('EE6AA7', ['HotPink2']),

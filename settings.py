@@ -19,5 +19,5 @@
 
 APP_Main_Title = "ColorSwatch Tool"
 
-SWATCH_FONT = "Helvetica 7 bold"
-INPUT_FONT = "Courier 8 normal"
+SWATCH_FONT = 'Helvetica 8 bold'
+INPUT_FONT = 'Courier 10 bold'

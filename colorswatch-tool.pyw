@@ -47,6 +47,7 @@ class ColorChart(tk.Frame):
         tk.Frame.__init__(self, parent, *args, **kwargs)
         self.parent = parent
         self.colors = colors
+        self.top = self.winfo_toplevel()
         self.COMPACTIFY = False
         self.SHOW_NAMES = True
         self.JUSTIFY = False
@@ -63,10 +64,12 @@ class ColorChart(tk.Frame):
     def set_controls(self):
         row = 0
         col = 0
-        self.label1 = tk.Label(self.parent, text="Tcl {}".format(tk.TclVersion))
+        tcl_version = tk.Tcl().eval('info patchlevel')  # More detail than tk.TclVersion
+        self.label1 = tk.Label(self.parent, text="Tcl {}".format(tcl_version))
         self.label1.grid(row=row, column=col, sticky='nswe')
         col += 1
-        self.label2 = tk.Label(self.parent, text="Tk {}".format(tk.TkVersion))
+        tk_version = self.top.tk.call('info', 'patchlevel')  # More detail than tk.TkVersion, eval creates extra window
+        self.label2 = tk.Label(self.parent, text="Tk {}".format(tk_version))
         self.label2.grid(row=row, column=col, sticky='nswe')
         col += 1
         self.button_names = tk.Button(self.parent, text="Sort", command=self._on_cycle_sort)
@@ -215,6 +218,6 @@ if __name__ == "__main__":
     root.resizable(0, 0)
     root.title(settings.APP_Main_Title)
     logging.debug("Starting")
-    root.geometry('+%d+%d' % (50, 50))
+    root.geometry('+%d+%d' % (10, 10))
     APP = ColorChart(parent=root, colors=colors)
     APP.mainloop()

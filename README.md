@@ -4,6 +4,8 @@ Run: `python3 colorswatch-tool.pyw`
 
 Or double-click `colorswatch-tool.pyw`
 
+![Sample screenshot](/docs/screenshot.jpg?raw=true)
+
 Features:
 * Click color to show details
 * Use `Copy` to copy details to clipboard
